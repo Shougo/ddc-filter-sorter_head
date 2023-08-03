@@ -1,0 +1,41 @@
+*ddc-filter-sorter_dup.txt*	Dup sorter for ddc.vim
+
+Author: Shougo <Shougo.Matsu at gmail.com>
+License: MIT license
+
+CONTENTS                                      *ddc-filter-sorter_dup-contents*
+
+Introduction		|ddc-filter-sorter_dup-introduction|
+Install			|ddc-filter-sorter_dup-install|
+Examples		|ddc-filter-sorter_dup-examples|
+Params			|ddc-filter-sorter_dup-params|
+
+
+==============================================================================
+INTRODUCTION                              *ddc-filter-sorter_dup-introduction*
+
+It is dup order sorter.  The higher is the duplicated word.
+
+NOTE: It must be "postFilters".
+
+
+==============================================================================
+INSTALL                                        *ddc-filter-sorter_dup-install*
+
+Please install both "ddc.vim" and "denops.vim".
+
+https://github.com/Shougo/ddc.vim
+https://github.com/vim-denops/denops.vim
+
+
+==============================================================================
+EXAMPLES                                      *ddc-filter-sorter_dup-examples*
+>
+	call ddc#custom#patch_global('postFilters', ['sorter_dup'])
+<
+
+==============================================================================
+PARAMS                                          *ddc-filter-sorter_dup-params*
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:noet:fen:noet:
