@@ -17,10 +17,11 @@ function calcScore(
   const index = words.indexOf(str);
   let score = index;
 
-  const nextIndex = words.indexOf(str, index + 1);
-  if (nextIndex > 0) {
-    score -= nextIndex;
-  }
+  words.slice(index + 1).forEach((word, index) => {
+    if (word.startsWith(str)) {
+      score -= words.length - index;
+    }
+  });
 
   return score;
 }
@@ -36,7 +37,7 @@ export class Filter extends BaseFilter<Params> {
     const words = args.items.map((item) => item.word);
 
     return Promise.resolve(args.items.sort((a, b) => {
-      return calcScore(b.word, words) - calcScore(a.word, words);
+      return calcScore(a.word, words) - calcScore(b.word, words);
     }));
   }
 
@@ -45,5 +46,6 @@ export class Filter extends BaseFilter<Params> {
 
 Deno.test("calcScore", () => {
   assertEquals(calcScore("a", ["a", "b"]), 0);
+  assertEquals(calcScore("a", ["a", "b", "ab"]), -2);
   assertEquals(calcScore("a", ["a", "b", "a"]), -2);
 });
