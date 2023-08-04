@@ -1,13 +1,10 @@
 import {
   BaseFilter,
   Item,
-  DdcOptions,
 } from "https://deno.land/x/ddc_vim@v3.9.2/types.ts";
 import {
   assertEquals,
   Denops,
-  fn,
-  op,
 } from "https://deno.land/x/ddc_vim@v3.9.2/deps.ts";
 
 function calcScore(
@@ -19,7 +16,7 @@ function calcScore(
 
   words.slice(index + 1).forEach((word, index) => {
     if (word.startsWith(str)) {
-      score -= words.length - index;
+      score -= (words.length - index) / 2;
     }
   });
 
@@ -29,7 +26,7 @@ function calcScore(
 type Params = Record<never, never>;
 
 export class Filter extends BaseFilter<Params> {
-  override async filter(args: {
+  override filter(args: {
     denops: Denops;
     completeStr: string;
     items: Item[];
