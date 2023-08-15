@@ -1,11 +1,11 @@
 import {
   BaseFilter,
   Item,
-} from "https://deno.land/x/ddc_vim@v3.9.2/types.ts";
+} from "https://deno.land/x/ddc_vim@v4.0.4/types.ts";
 import {
   assertEquals,
   Denops,
-} from "https://deno.land/x/ddc_vim@v3.9.2/deps.ts";
+} from "https://deno.land/x/ddc_vim@v4.0.4/deps.ts";
 
 function calcScore(
   str: string,
@@ -23,7 +23,7 @@ function calcScore(
   return score;
 }
 
-type Params = Record<never, never>;
+type Params = Record<string, never>;
 
 export class Filter extends BaseFilter<Params> {
   override filter(args: {
