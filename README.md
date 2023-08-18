@@ -1,6 +1,6 @@
-# ddc-filter-sorter_dup
+# ddc-filter-sorter_head
 
-It is dup order sorter.  The higher is the duplicated word.
+The higher is the head matched word.
 
 NOTE: It must be "postFilters".
 
@@ -16,5 +16,5 @@ https://github.com/Shougo/ddc.vim
 ## Configuration
 
 ```vim
-call ddc#custom#patch_global('postFilters', ['sorter_dup'])
+call ddc#custom#patch_global('postFilters', ['sorter_head'])
 ```
