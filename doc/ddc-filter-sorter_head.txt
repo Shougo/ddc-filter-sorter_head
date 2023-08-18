@@ -14,7 +14,7 @@ Params			|ddc-filter-sorter_head-params|
 ==============================================================================
 INTRODUCTION                             *ddc-filter-sorter_head-introduction*
 
-The higher is the head matched word.
+The higher is the head matched word of the other items.
 
 NOTE: It must be "postFilters".
 

@@ -1,6 +1,6 @@
 # ddc-filter-sorter_head
 
-The higher is the head matched word.
+The higher is the head matched word of the other items.
 
 NOTE: It must be "postFilters".
 
