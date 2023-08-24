@@ -7,11 +7,12 @@ NOTE: It must be "postFilters".
 ## Required
 
 ### denops.vim
+
 https://github.com/vim-denops/denops.vim
 
 ### ddc.vim
-https://github.com/Shougo/ddc.vim
 
+https://github.com/Shougo/ddc.vim
 
 ## Configuration
 
