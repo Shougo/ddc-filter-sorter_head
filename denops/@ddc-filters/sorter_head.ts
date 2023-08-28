@@ -12,9 +12,13 @@ function calcScore(
   const index = words.indexOf(str);
   let score = index;
 
-  words.slice(index + 1).forEach((word, index) => {
-    if (word.length > input.length + 2 && word.startsWith(str)) {
+  const minLength = input.length + 2;
+  words.forEach((word, index) => {
+    if (word.length > minLength && word.startsWith(str)) {
       score -= (words.length - index) / 2;
+      if (score < 0) {
+        score = 0;
+      }
     }
   });
 
@@ -44,6 +48,6 @@ export class Filter extends BaseFilter<Params> {
 
 Deno.test("calcScore", () => {
   assertEquals(calcScore("", "a", ["a", "b"]), 0);
-  assertEquals(calcScore("", "a", ["a", "b", "ab"]), -2);
-  assertEquals(calcScore("", "a", ["a", "b", "a"]), -2);
+  assertEquals(calcScore("", "a", ["a", "b", "ab"]), 0);
+  assertEquals(calcScore("", "a", ["a", "b", "a"]), 0);
 });
