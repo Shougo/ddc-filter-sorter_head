@@ -1,8 +1,9 @@
-import { BaseFilter, type Item } from "jsr:@shougo/ddc-vim@6.0.0/types";
+import { type Item } from "jsr:@shougo/ddc-vim@~7.0.0/types";
+import { BaseFilter } from "jsr:@shougo/ddc-vim@~7.0.0/filter";
 
-import type { Denops } from "jsr:@denops/core@^7.0.0";
+import type { Denops } from "jsr:@denops/core@~7.0.0";
 
-import { assertEquals } from "jsr:@std/assert@1.0.1";
+import { assertEquals } from "jsr:@std/assert@~1.0.3/equals";
 
 function calcScore(
   input: string,
